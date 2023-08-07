@@ -1,7 +1,8 @@
-module.export = {
-    "printWidth": 120,
-    "arrowParens": "always",
-    "bracketSameLine": true,
-    "jsxSingleQuote": false,
-    "semi": true
-}
+module.exports = {
+  printWidth: 120,
+  endOfLine: "lf",
+  semi: true,
+  singleQuote: false,
+  tabWidth: 2,
+  trailingComma: "all",
+};
