@@ -2,10 +2,10 @@ import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 import styles from "./button.module.css";
 
-const buttonVariants = cva([`${styles["cybr-btn"]}`], {
+const buttonVariants = cva([`${styles["cyber-btn"]}`], {
   variants: {
     variant: {
-      default: `${styles["cybr-btn"]}`,
+      default: `${styles["cyber-btn"]}`,
     },
   },
   defaultVariants: {
