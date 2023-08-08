@@ -1,0 +1,17 @@
+.input {
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  color: black;
+  font-size: 1.8rem;
+  border: 0.2rem solid var(--haiti);
+}
+
+.input:focus {
+  outline: none;
+  border: 0.2rem solid var(--crusta);
+}
+
+.input::placeholder {
+  font-size: 1.8rem;
+  text-align: left;
+}

@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-size: 62.5%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 :root {
@@ -15,15 +14,15 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --transparent: transparent;
-  --white-01 :#ffffff1a;
-  --white-08:#ffffff80;
+  --white-01: #ffffff1a;
+  --white-08: #ffffff80;
   --cinder: #0e0a12;
   --heliotrope: #de2af8;
   --cerise: #da2eb3;
   --niagara: #08b2a3;
+  --viking: #4ac9db;
   --carnation: #f05b5b;
   --crusta: #f66c42;
-  --viking: #4ac9db;
   --chambray: #3f4890;
   --firebush: #e08936;
   --amaranth: #eb3b57;
@@ -36,13 +35,12 @@
   --ebony: #130e29;
 }
 
-@layer base{
-  :root{
-    --bg-accent-primary : var(--haiti);
-    --bg-accent-secondary : var(--ebony)
+@layer base {
+  :root {
+    --bg-accent-primary: var(--haiti);
+    --bg-accent-secondary: var(--ebony);
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -54,10 +52,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
