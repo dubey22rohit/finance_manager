@@ -2,43 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+0 - 600: Phone
+600 - 900: Tablet portrait
+900 - 1200: Tablet landscape
+1200 - 1800: Normal styles
+1800+ : Big Desktop
+1em = 16px
+The smaller device rules always should write below the bigger device rules
+Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
+*/
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: "Roboto", Roboto;
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --transparent: transparent;
-  --white-01: #ffffff1a;
-  --white-08: #ffffff80;
-  --cinder: #0e0a12;
-  --heliotrope: #de2af8;
-  --cerise: #da2eb3;
-  --niagara: #08b2a3;
-  --viking: #4ac9db;
-  --carnation: #f05b5b;
-  --crusta: #f66c42;
-  --chambray: #3f4890;
-  --firebush: #e08936;
-  --amaranth: #eb3b57;
-  --bittersweet: #f97966;
-  --spray: #53f4ef;
-  --purpleheart: #7025c6;
-  --amaranth: #e7384a;
-  --outrageousorange: #fc663a;
-  --haiti: #1f1439;
-  --ebony: #130e29;
+  --linear: linear-gradient(90deg, #c82cff -4.52%, #6e4aff 96.66%);
+  --primary: #53cafd;
+  --secondary: #e43bff;
+  --primary-hover: #21bafc;
+  --primary-dark: #027fb5;
+  --rgba-primary-1: rgba(83, 202, 253, 0.1);
+  --rgba-primary-2: rgba(83, 202, 253, 0.2);
+  --rgba-primary-3: rgba(83, 202, 253, 0.3);
+  --rgba-primary-4: rgba(83, 202, 253, 0.4);
+  --rgba-primary-5: rgba(83, 202, 253, 0.5);
+  --rgba-primary-6: rgba(83, 202, 253, 0.6);
+  --rgba-primary-7: rgba(83, 202, 253, 0.7);
+  --rgba-primary-8: rgba(83, 202, 253, 0.8);
+  --rgba-primary-9: rgba(83, 202, 253, 0.9);
+  --font-family-base: Roboto, sans-serif;
+  --font-family-title: Roboto, sans-serif;
+  --title: #000;
+  --text-color: #fff;
+  --bs-body-color: rgba(255, 255, 255, 0.6);
+  --bs-card-bg: rgba(1, 41, 103, 0.6);
+  --bs-blue: #391995;
+  --bs-blue-light: rgba(57, 25, 149, 0.5);
+  --bs-indigo: #021c53;
+  --bs-purple: #6f42c1;
+  --bs-pink: #e83e8c;
+  --bs-red: #ee3232;
+  --bs-orange: #ff9900;
+  --bs-yellow: #fffa6f;
+  --bs-green: #297f00;
+  --bs-teal: #20c997;
+  --bs-cyan: #3065d0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #53cafd;
+  --bs-secondary: #e43bff;
+  --bs-success: #1eae7a;
+  --bs-info: #00afef;
+  --bs-warning: #ffaa2b;
+  --bs-danger: #f72b50;
+  --bs-light: #b1aeae;
+  --bs-dark: #c9c4c4;
+  --bs-primary-rgb: 83, 202, 253;
+  --bs-secondary-rgb: 228, 59, 255;
+  --bs-success-rgb: 30, 174, 122;
+  --bs-info-rgb: 0, 175, 239;
+  --bs-warning-rgb: 255, 170, 43;
+  --bs-danger-rgb: 247, 43, 80;
+  --bs-light-rgb: 177, 174, 174;
+  --bs-dark-rgb: 201, 196, 196;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-bg-rgb: 49, 24, 152;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: Roboto, sans-serif;
+  --bs-body-font-size: 0.875rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: rgba(255, 255, 255, 0.6);
+  --bs-body-bg: #000936;
+  --sidebar-bg: rgba(1, 41, 103, 0.6);
+  --nav-headbg: rgba(1, 41, 103, 0.6);
+  --bg-circle: linear-gradient(131.92deg, #002058 14.55%, #01072c 95.62%);
+  --input-primary: #ffffff08;
+  --input-hover: transparent;
 }
 
 @layer base {
   :root {
-    --bg-accent-primary: var(--haiti);
-    --bg-accent-secondary: var(--ebony);
+    --bg-accent-primary: blue;
+    --bg-accent-secondary: blue;
   }
 }
 

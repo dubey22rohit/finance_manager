@@ -16,7 +16,12 @@ const inputVariants = cva([`${styles.input}`], {
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof inputVariants> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, variant, ...props }, ref) => {
-  return <input className={inputVariants({ variant, className })} ref={ref} {...props} />;
+  return (
+    <div className={styles.container}>
+      <label className={styles.label}>{props.placeholder}</label>
+      <input className={inputVariants({ variant, className })} ref={ref} {...props} />
+    </div>
+  );
 });
 
 Input.displayName = "Input";

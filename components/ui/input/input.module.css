@@ -1,17 +1,30 @@
+.container {
+  width: 100%;
+}
 .input {
-  border-radius: 0.4rem;
-  padding: 0.4rem;
-  color: black;
-  font-size: 1.8rem;
-  border: 0.2rem solid var(--haiti);
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  font-size: 2rem;
+  padding: 1.2rem 1.6rem;
+  color: var(--text-color);
+  outline: none;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.25);
+  background-color: var(--input-primary);
 }
 
+.input:hover,
 .input:focus {
-  outline: none;
-  border: 0.2rem solid var(--crusta);
+  background-color: var(--input-hover);
 }
 
 .input::placeholder {
+  visibility: hidden;
+}
+
+.label {
   font-size: 1.8rem;
-  text-align: left;
+  margin: 0 0 1.2rem 0.4rem;
+  text-transform: lowercase;
+  color: var(--bs-gray-600);
 }

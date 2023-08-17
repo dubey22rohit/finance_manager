@@ -2,10 +2,10 @@ import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 import styles from "./button.module.css";
 
-const buttonVariants = cva([`${styles["cyber-btn"]}`], {
+const buttonVariants = cva([`${styles["cta"]}`], {
   variants: {
     variant: {
-      default: `${styles["cyber-btn"]}`,
+      default: `${styles["cta"]}`,
     },
   },
   defaultVariants: {
@@ -16,21 +16,13 @@ const buttonVariants = cva([`${styles["cyber-btn"]}`], {
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  buttonText: string;
   purpose?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, ...props }, ref) => {
   return (
     <button className={buttonVariants({ variant, className })} ref={ref} {...props}>
-      {props.buttonText}
-      <span aria-hidden>_</span>
-      <span aria-hidden className={styles["cybr-btn__glitch"]}>
-        {props.buttonText}_
-      </span>
-      <span aria-hidden className={styles["cybr-btn__tag"]}>
-        {props.purpose ?? `R25`}
-      </span>
+      {props.children}
     </button>
   );
 });
